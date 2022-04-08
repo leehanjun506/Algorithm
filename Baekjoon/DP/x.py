@@ -8,4 +8,4 @@ print(array)
 x = [[i] for i in range(4)]
 print(x)
 print([1]*3)
-print(12)
+print(123)
