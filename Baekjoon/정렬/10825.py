@@ -1,6 +1,7 @@
 n = int(input())
 
 list = []
+
 for i in range(n):
     name,kor,eng,math = input().split()
     kor,eng,math = int(kor),int(eng),int(math)

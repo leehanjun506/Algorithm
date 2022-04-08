@@ -1,5 +1,7 @@
 num =int(input())
+
 list = []
+
 for i in range(num):
     a,b = input().split()
     a=int(a)

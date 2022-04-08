@@ -1,4 +1,5 @@
 num = int(input())
+
 array = []
 for i in range(num):
     a = list(map(int,input().split()))

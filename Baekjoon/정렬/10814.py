@@ -1,4 +1,5 @@
 n = int(input())
+
 list = []
 for i in range(n):
     age,name = input().split()

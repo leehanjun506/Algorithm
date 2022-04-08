@@ -1,4 +1,5 @@
 num = int(input())
+
 list = []
 for i in range(0,num):
     list.append(int(input()))
