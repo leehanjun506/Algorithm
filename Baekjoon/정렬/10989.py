@@ -1,5 +1,6 @@
 import sys
 input = sys.stdin.readline
+
 n = int(input())
 
 list = [0]*10001
