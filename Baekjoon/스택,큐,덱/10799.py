@@ -1,4 +1,5 @@
 n  = input()
+
 list = list(n)
 ans = 0
 num = 0

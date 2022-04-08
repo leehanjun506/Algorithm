@@ -1,5 +1,6 @@
 from collections import deque
 import sys
+
 n = int(sys.stdin.readline())
 x=deque()
 for i in range(n):

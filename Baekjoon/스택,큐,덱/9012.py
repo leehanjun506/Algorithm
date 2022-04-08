@@ -1,4 +1,5 @@
 num = int(input())
+
 ans = ['NO' for i in range(num)]
 for i in range(num):
     a = input()

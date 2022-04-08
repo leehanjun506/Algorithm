@@ -1,5 +1,6 @@
 import sys
 n = int(sys.stdin.readline())
+
 list = []
 for i in range(n):
     command = sys.stdin.readline()

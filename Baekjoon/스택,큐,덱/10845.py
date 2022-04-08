@@ -1,4 +1,5 @@
 import sys
+
 num = int(sys.stdin.readline())
 list = []
 for i in range(num):
