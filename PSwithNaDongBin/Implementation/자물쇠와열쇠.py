@@ -1,15 +1,15 @@
 # https://programmers.co.kr/learn/courses/30/lessons/60059
 def solution(key, lock):
-    def rout(key):
+    def rotate(key):
         new_key=[[1]*len(key) for _ in range(len(key))]
         for i in range(len(key)):
             for j in range(len(key)):
                 new_key[i][j] = key[len(key)-1-j][i]
         return new_key
     key1 = key
-    key2 = rout(key1)
-    key3 = rout(key2)
-    key4 = rout(key3)
+    key2 = rotate(key1)
+    key3 = rotate(key2)
+    key4 = rotate(key3)
     ans = [key1,key2,key3,key4]
     map = [[2]*(len(lock)+2*len(key)) for _ in range(2*len(key)+len(lock))]
     for i in range(len(lock)):
