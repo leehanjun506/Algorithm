@@ -18,7 +18,7 @@ def bfs(x,y):
             ny = y + dy[i]
             if nx<0 or ny<0 or nx>n-1 or ny>m-1 or graph[nx][ny]==0:
                 continue
-            if graph[nx][ny] == 1:
+            if graph[nx][ny] == 1: # 방문을 한 것들은 이미 +n이 되어있다 그래프 값 자체가 최단거리로 평가
                 graph[nx][ny] = graph[x][y]+1
                 queue.append((nx,ny))
     
