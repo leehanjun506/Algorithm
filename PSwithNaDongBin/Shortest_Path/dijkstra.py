@@ -35,7 +35,8 @@ def dijkstra(start):
     distance[start] = 0
     visited[start] = True
     for j in graph[start]:
-        distance[j[0]] = j[1]
+        if j[1] < distance[j[0]]:
+            distance[j[0]] = j[1]
     # 시작 노드를 제외한 전체 n-1개의 노드에 대해 반복
     for _ in range(n-1): #시간 복잡도 V
         # 현재 최단 거리가 가장 짧은 노드를 꺼내서, 방문 처리
