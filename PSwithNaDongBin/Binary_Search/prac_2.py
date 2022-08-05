@@ -1,23 +1,23 @@
-n,m = list(map(int,input().split()))
-height = list(map(int,input().split()))
-height_max = max(height)
-value = []
-def binary(height,m,start,end):
-    if start>end:
-        return None
-    mid = (start+end)//2
-    sum = 0
-    for i in height:
-        if i<mid:
-            continue
-        sum+= (i-mid)
-    if sum >= m:
-        value.append(mid)
-        return binary(height,m,mid+1,end)
-    else :
-        return binary(height,m,start,mid-1)
+# n,m = list(map(int,input().split()))
+# height = list(map(int,input().split()))
+# height_max = max(height)
+# value = []
+# def binary(height,m,start,end):
+#     if start>end:
+#         return None
+#     mid = (start+end)//2
+#     sum = 0
+#     for i in height:
+#         if i<mid:
+#             continue
+#         sum+= (i-mid)
+#     if sum >= m:
+#         value.append(mid)
+#         return binary(height,m,mid+1,end)
+#     else :
+#         return binary(height,m,start,mid-1)
     
-print(max(value))
+# print(max(value))
 
 #답안 예시
 n,m = list(map(int,input().split(' ')))
