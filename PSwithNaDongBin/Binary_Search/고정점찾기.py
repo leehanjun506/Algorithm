@@ -12,4 +12,5 @@ def binary_search(start,end,array):
 n = int(input())
 array = list(map(int,input().split()))
 result = binary_search(0,n-1,array)
+
 print(result)

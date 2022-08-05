@@ -20,6 +20,7 @@ if result ==None:
 else:
     print(result+1)
     
+    
 #이진 탐색(반복문)
 def binary_search2(array,target,start,end):
     while start<=end:

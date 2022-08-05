@@ -1,5 +1,6 @@
 import sys
 sys.setrecursionlimit(10**7)
+
 n = int(input())
 array= list(map(int,input().split()))
 m = int(input())

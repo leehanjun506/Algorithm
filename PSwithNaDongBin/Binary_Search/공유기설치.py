@@ -8,6 +8,7 @@ home.sort()
 
 start = 1
 end = home[-1] - home[0]
+
 while end>=start:
     current_val = home[0]
     count=1
