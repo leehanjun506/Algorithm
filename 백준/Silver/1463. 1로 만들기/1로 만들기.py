@@ -1,14 +1,14 @@
-a=int(input())
-dp = []
-for i in range(0,1000002):
-    dp.append(0)
-for i in range(2,a+1):
-    dp[i]=dp[i-1]+1
+num = int(input())
+array = [0]*num
 
-    if i%2==0:
-        dp[i]=min(dp[i//2]+1,dp[i])
-    if i%3==0:
-        dp[i]=min(dp[i//3]+1,dp[i])
+for i in range(0,num+1):
+    array.append(0)
 
-print(dp[a])
-
+for i in range(2,num+1):
+    array[i]=array[i-1]+1
+    if i%3 == 0:
+        array[i]=min(array[i//3]+1,array[i])
+    if i%2 == 0:
+        array[i]=min(array[i//2]+1,array[i])
+    
+print(array[i])
