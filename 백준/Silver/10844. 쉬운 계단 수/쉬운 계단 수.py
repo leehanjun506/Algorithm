@@ -11,7 +11,5 @@ for i in range(1,n):
         else:
             arr[i][j] = arr[i-1][j-1] + arr[i-1][j+1]%1000000000
 
-sum = 0
-for i in range(10):
-    sum += arr[n-1][i]
-print(sum%1000000000)
+s = sum(arr[n-1])
+print(s%1000000000)
