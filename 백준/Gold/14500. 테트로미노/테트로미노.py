@@ -1,42 +1,52 @@
-import sys
-input = sys.stdin.readline
+n,m = map(int,input().split())
+arr = [list(map(int,input().split())) for _ in range(n)]
 
-answer = 0
-def DFS(y, x, s, v):
-    global answer
+visit = [[False]*m for _ in range(n)]
+
+dx = [-1,1,0,0]
+dy = [0,0,-1,1]
+
+ans = 0
+
+def dfs(x,y,s,v):
+    global ans
     if v == 4:
-        answer = max(answer, s)
+        ans = max(ans,s)
         return
-    visit[y][x] = 1
     for i in range(4):
-        yy = y + dy[i]
-        xx = x + dx[i]
-        if 0 <= yy < n and 0 <= xx < m and visit[yy][xx] == 0:
-            DFS(yy, xx, s+arr[yy][xx], v+1)
-    visit[y][x] = 0
-def T(y, x):
-    global answer
+        nx = x+dx[i]
+        ny = y+dy[i]
+        if nx>=0 and nx<n and ny>=0 and ny<m and visit[nx][ny] == False:
+            visit[nx][ny] = True
+            dfs(nx,ny,s+arr[nx][ny],v+1)
+            visit[nx][ny] = False
+
+def T(x, y):
+    global ans
     for k in range(4):
-        s = arr[y][x]
+        s = arr[x][y]
         b = 1
         for i in range(4):
             if i == k:
                 continue
-            yy = y + dy[i]
-            xx = x + dx[i]
-            if yy < 0 or xx < 0 or yy >= n or xx >= m:
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx < 0 or ny < 0 or nx >= n or ny >= m:
                 b = 0
                 break
-            s += arr[yy][xx]
+            s += arr[nx][ny]
         if b:
-            answer = max(answer, s)
-n, m = map(int,input().split())
-arr = [list(map(int,input().split())) for _ in range(n)]
-visit = [[0 for _ in range(m)] for _ in range(n)]
-dy = [0,1,0,-1]
-dx = [1,0,-1,0]
+            ans = max(ans, s)
+    
+    
 for i in range(n):
     for j in range(m):
-        DFS(i, j, 0, 0)
-        T(i, j)
-print(answer)
+        if visit[i][j] == False:
+            visit[i][j] = True
+            dfs(i,j,arr[i][j],1)
+            visit[i][j] = False
+
+for i in range(n):
+    for j in range(m):
+        T(i,j)
+print(ans)
